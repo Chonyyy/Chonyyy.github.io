@@ -6,12 +6,14 @@
 body {
   font-family: sans-serif;
   text-align: center;
+  background-color: #E0FFFF;
 }
 h1 {
   font-size: 40px;
 }
 p {
   font-size: 20px;
+  margin-top: 100px;
 }
 .heart {
   width: 100px;
@@ -39,31 +41,100 @@ p {
   top: 0;
   left: 50px;
 }
-</style>`
-<h1>Te ...</h1>
+.formulario {
+  border: 1px solid #ccc;
+  padding-top: 10px;
+  padding-bottom: 0.55px;
+  background-color: #87CEEB;
+}
+.heart {
+  animation: heart-animation 2s infinite;
+}
+
+@keyframes heart-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+</style>
 </head>
 <body>
 
-<div>
-    .
+<h1>Descubre la contraseña</h1>
+
+<div id="formulario" class="formulario">
+  <form action="/procesar-formulario" method="post">
+    <label for="usuario">Usuario:</label>
+    <input type="text" name="usuario" id="usuario">
+    <br>
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" name="contraseña" id="contraseña" data-contraseña="hola">
+    <br>
+    <input type="submit" value="Enviar">
+  </form>
+
+  
+  <div id="mensaje"></div> </div>
+
+<div class="heart" style="display: none;">
 </div>
-
-
-<div class="heart"></div>
 <script>
 var heart = document.querySelector(".heart");
-function animateHeart() {
-  heart.style.transform = "scale(1.0)";
-  setTimeout(function() {
-    heart.style.transform = "scale(0.5)";
-    setTimeout(function() {
-      heart.style.transform = "scale(1.0)";
-      animateHeart();
-    }, 800);
-  }, 500);
+
+function mostrarCorazon() {
+  // Si la contraseña no está vacía,
+  // mostramos el corazón
+  if (document.getElementById("contraseña").value !== "") {
+    heart.style.display = "block";
+  }
 }
-animateHeart();
+
+formulario.addEventListener("submit", (event) => {
+  const usuario = event.target.elements["usuario"].value;
+  const contraseña = event.target.elements["contraseña"].value;
+
+  if (usuario === "" || contraseña === "") {
+    alert("El nombre de usuario o la contraseña no pueden estar vacíos");
+    event.preventDefault(); // Evitamos el envío del formulario
+  } else if (usuario === "key" && contraseña === "chony") {
+    mostrarCorazon();
+    document.getElementById("mensaje").innerHTML = `
+      <p>
+      El usuario es key y la contraseña es chony...Felicidades has ganado tu premio!!<br>
+      <br>
+      Aqui una colección de canciones que me hacen pensar en como me siento, estoy segura que vas a saber cuales son:<br>
+      
+      	Hoy desperté con ganas de besarte
+	Tengo una sed de acariciarte
+	Enredarme a ti y no soltarte
+      
+      
+      </p>
+    `;
+    event.preventDefault(); // Evitamos el envío del formulario
+  } else {
+    // Si la combinación de usuario y contraseña no es la esperada,
+    // se podría enviar el formulario a un servidor para su validación.
+  }
+});
+
+heart.addEventListener("animationend", () => {
+  // Movemos el corazón hacia arriba
+  heart.style.top = "-50px";
+});
+
+// Ajustamos el margen del párrafo
+document.getElementById("mensaje").style.marginBottom = "100px";
 </script>
-<p style="margin: 30 auto">lalalal</p>
 </body>
 </html>
+
+
