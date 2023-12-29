@@ -81,8 +81,11 @@ p {
     <input type="submit" value="Enviar">
   </form>
 
+  <audio src="cancion.mp3" loop="true" controls style="display: none;">
+  </audio>
   
-  <div id="mensaje"></div> </div>
+  
+<div id="mensaje"></div> </div>
 
 <div class="heart" style="display: none;">
 </div>
@@ -105,24 +108,177 @@ formulario.addEventListener("submit", (event) => {
     alert("El nombre de usuario o la contraseña no pueden estar vacíos");
     event.preventDefault(); // Evitamos el envío del formulario
   } else if (usuario === "key" && contraseña === "chony") {
+
+    document.querySelector("audio").play();
     mostrarCorazon();
     document.getElementById("mensaje").innerHTML = `
-      <p>
-      El usuario es key y la contraseña es chony...Felicidades has ganado tu premio!!<br>
-      <br>
-      Aqui una colección de canciones que me hacen pensar en como me siento, estoy segura que vas a saber cuales son:<br>
-      
-      	Hoy desperté con ganas de besarte
-	Tengo una sed de acariciarte
-	Enredarme a ti y no soltarte
-      
+    <h2>Feliz navidad</h2>
+    <h2>Te regalo esta canción ...</h2>
+    <h2> </h2>
+    <h2>All of me </h2>
+      <p style="white-space: pre-wrap;">
+        ¿Qué haría sin tu boca inteligente?
+        What would I do without your smart mouth?
+        
+        Atrayéndome y tú me echas
+        Drawing me in, and you kicking me out
+        
+        Tienes mi cabeza dando vueltas, no es broma, no puedo precisarte
+        You've got my head spinning, no kidding, I can't pin you down
+        
+        ¿Qué está pasando en esa hermosa mente?
+        What's going on in that beautiful mind?
+        
+        Estoy en tu viaje mágico y misterioso
+        I'm on your magical mystery ride
+        
+        Y estoy tan mareado, no sé qué me golpeó, pero estaré bien
+        And I'm so dizzy, don't know what hit me, but I'll be alright
+
+        Mi cabeza está bajo el agua
+        My head's under water
+        
+        Pero estoy respirando bien
+        But I'm breathing fine
+        
+        Estás loca y yo estoy loca.
+        You're crazy and I'm out of my mind
+
+        Porque todo de mi
+        'Cause all of me
+        
+        Ama todo de ti
+        Loves all of you
+        
+        Ama tus curvas y todos tus bordes
+        Love your curves and all your edges
+        
+        Todas tus perfectas imperfecciones
+        All your perfect imperfections
+        
+        dame todo de ti
+        Give your all to me
+        
+        Y daré todo por ti
+        I'll give my all to you
+        
+        tu eres mi final y mi principio
+        You're my end and my beginning
+        
+        Incluso cuando pierdo estoy ganando
+        Even when I lose, I'm winning
+        
+        Porque te doy todo de mí
+        'Cause I give you all of me
+        
+        Y me das toda de ti, oh-oh
+        And you give me all of you, oh-oh
+
+        ¿Cuántas veces tengo que decírtelo?
+        How many times do I have to tell you?
+        
+        Incluso cuando lloras, también eres hermosa
+        Even when you're crying, you're beautiful too
+        
+        El mundo te está derrotando, estoy presente en todos los estados de ánimo
+        The world is beating you down, I'm around through every mood
+        
+        Eres mi perdición, eres mi musa
+        You're my downfall, you're my muse
+        
+        Mi peor distracción, mi ritmo y blues.
+        My worst distraction, my rhythm and blues
+        
+        No puedo dejar de cantar, está sonando en mi cabeza por ti
+        I can't stop singing, it's ringing in my head for you
+
+        Mi cabeza está bajo el agua
+        My head's under water
+        
+        Pero estoy respirando bien
+        But I'm breathing fine
+        
+        Estás loco y yo estoy loco.
+        You're crazy and I'm out of my mind
+
+        Porque todo de mi
+        'Cause all of me
+        
+        Los ama a todos
+        Loves all of you
+        
+        Ama tus curvas y todos tus bordes
+        Love your curves and all your edges
+        
+        Todas tus perfectas imperfecciones
+        All your perfect imperfections
+        
+        dame todo de ti
+        Give your all to me
+        
+        y daré todo por ti
+        I'll give my all to you
+        
+        tu eres mi final y mi principio
+        You're my end and my beginning
+        
+        Incluso cuando pierdo estoy ganando
+        Even when I lose, I'm winning
+        
+        Porque te doy todo de mí
+        'Cause I give you all of me
+        
+        Y me das toda de ti, oh-oh
+        And you give me all of you, oh-oh
+        
+        Dame todo de ti, oh
+        Give me all of you, oh
+        Cartas sobre la mesa, ambos mostramos corazones
+        Cards on the table, we're both showing hearts
+        
+        Arriesgándolo todo, aunque sea difícil
+        Risking it all, though it's hard
+        Porque todo de mi
+        'Cause all of me
+        
+        Ama todo de ti
+        Loves all of you
+        
+        Ama tus curvas y todos tus bordes
+        Love your curves and all your edges
+        
+        Todas tus perfectas imperfecciones
+        All your perfect imperfections
+        
+        dame todo de ti
+        Give your all to me
+        
+        Y daré todo por ti
+        I'll give my all to you
+        
+        tu eres mi final y mi principio
+        You're my end and my beginning
+        
+        Incluso cuando pierdo estoy ganando
+        Even when I lose, I'm winning
+        
+        Porque te doy todo de mí
+        'Cause I give you all of me
+        
+        Y me das todo de ti
+        And you give me all of you
+        te doy todo de mi
+        I give you all of me
+        
+        Y me das toda de ti, oh-oh
+        And you give me all of you, oh-oh
       
       </p>
     `;
     event.preventDefault(); // Evitamos el envío del formulario
   } else {
-    // Si la combinación de usuario y contraseña no es la esperada,
-    // se podría enviar el formulario a un servidor para su validación.
+    alert("Sigue intentando")
+    event.preventDefault();
   }
 });
 
