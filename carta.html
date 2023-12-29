@@ -9,7 +9,8 @@ body {
   background-color: #E0FFFF;
 }
 h1 {
-  font-size: 40px;
+  font-size: 14px;
+  color: #060c35;
 }
 p {
   font-size: 20px;
@@ -42,10 +43,26 @@ p {
   left: 50px;
 }
 .formulario {
-  border: 1px solid #ccc;
-  padding-top: 10px;
-  padding-bottom: 0.55px;
-  background-color: #87CEEB;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(8, 41, 117, 0.797);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
 }
 .heart {
   animation: heart-animation 2s infinite;
@@ -68,9 +85,9 @@ p {
 </head>
 <body>
 
-<h1>Descubre la contraseña</h1>
-
-<div id="formulario" class="formulario">
+  
+  <div id="formulario" class="formulario">
+  <h1>Descubre la contraseña</h1>
   <form action="/procesar-formulario" method="post">
     <label for="usuario">Usuario:</label>
     <input type="text" name="usuario" id="usuario">
@@ -80,10 +97,9 @@ p {
     <br>
     <input type="submit" value="Enviar">
   </form>
-
+</div>
   <audio src="cancion.mp3" loop="true" controls style="display: none;">
   </audio>
-  
   
 <div id="mensaje"></div> </div>
 
@@ -107,7 +123,7 @@ formulario.addEventListener("submit", (event) => {
   if (usuario === "" || contraseña === "") {
     alert("El nombre de usuario o la contraseña no pueden estar vacíos");
     event.preventDefault(); // Evitamos el envío del formulario
-  } else if (usuario === "key" && contraseña === "chony") {
+  } else if (usuario === "keyla" && contraseña === "chony") {
 
     document.querySelector("audio").play();
     mostrarCorazon();
@@ -115,7 +131,7 @@ formulario.addEventListener("submit", (event) => {
     <h2>Feliz navidad</h2>
     <h2>Te regalo esta canción ...</h2>
     <h2> </h2>
-    <h2>All of me </h2>
+    <h2 style="font-size: 60px;">All of me </h2>
       <p style="white-space: pre-wrap;">
         ¿Qué haría sin tu boca inteligente?
         What would I do without your smart mouth?
